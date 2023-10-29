@@ -44,6 +44,18 @@ export const LandingHero = () => {
       <div className="text-zinc-400 text-xs md:text-sm font-normal">
         No credit card required.
       </div>
+      <div className="text-zinc-400 text-xs md:text-sm font-normal">
+        Created By : Sameer Ahmed.
+      </div>
+      <Button className="mr-2">
+        <a
+          href="https://www.linkedin.com/in/sameer-ahmed-a77317118/"
+          
+        >
+           More About Owner
+        </a>
+      </Button>
+
     </div>
   );
 };

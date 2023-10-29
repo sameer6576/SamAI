@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 
 const font = Montserrat({
   weight: "600",
@@ -14,6 +15,13 @@ const font = Montserrat({
 
 const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+    if (!isMounted) {
+      return null;
+    }
 
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
@@ -31,6 +39,12 @@ const LandingNavbar = () => {
             Get Started
           </Button>
         </Link>
+          <Button
+            variant="outline"
+            className="rounded-full ml-2 "
+          >
+            <a href="https://drive.google.com/uc?export=download&id=1Cz8X9CT1pt0cPbjS_I0JGVNo9d8EuBXS">Portfolio</a>
+          </Button>
       </div>
     </nav>
   );
